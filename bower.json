@@ -1,0 +1,7 @@
+{
+  "name": "cache-in-learn",
+  "version": "0.0.1",
+  "dependencies": {
+  	"reveal.js": "https://github.com/hakimel/reveal.js.git#~3.1.0"
+  }
+}
