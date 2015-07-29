@@ -7,7 +7,8 @@ router.get('/', function(req, res) {
   res.render('index', { 
   	title: 'Cache in Learn', 
   	author: 'Rain Jiang',
-  	description: 'Usage of cache in Learn System'
+  	description: 'Usage of cache in Learn System',
+  	cache: 'is that bzhang?'
   });
 });
 

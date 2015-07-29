@@ -47,8 +47,10 @@ if (app.get('env') === 'development') {
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,
-            error: err,
-            title: 'error'
+            errorCode: err.status,
+            title: 'error',
+            author: 'Rain Jiang',
+            description: 'Errors occurs'
         });
     });
 }
@@ -59,8 +61,10 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
-        error: {},
-        title: 'error'
+        errorCode: err.status,
+        title: 'error',
+        author: 'Rain Jiang',
+        description: 'Errors occurs'
     });
 });
 

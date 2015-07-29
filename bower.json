@@ -2,6 +2,8 @@
   "name": "cache-in-learn",
   "version": "0.0.1",
   "dependencies": {
-  	"revealjs": "https://github.com/hakimel/reveal.js.git#~3.1.0"
+  	"revealjs": "https://github.com/hakimel/reveal.js.git#~3.1.0",
+  	"jquery": "https://github.com/jquery/jquery.git#~1.11.3",
+  	"bootstrap": "~3.3.5"
   }
 }

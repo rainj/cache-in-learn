@@ -5,22 +5,21 @@
 
 	<title><%-title %></title>
 
-	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-	<meta name="author" content="<%=author %>">
+	<meta name="description" content="<%-description %>">
+	<meta name="author" content="<%-author %>">
 
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-	<link rel="stylesheet" href="components/revealjs/css/reveal.css">
-	<link rel="stylesheet" href="components/revealjs/css/theme/league.css" id="theme">
-
-		<!-- Code syntax highlighting -->
-	<link rel="stylesheet" href="components/revealjs/lib/css/zenburn.css">
-
 	<link rel="stylesheet" href="/css/style.css">
 
+	<link rel="stylesheet" href="components/revealjs/css/reveal.css">
+	<link rel="stylesheet" href="components/revealjs/css/theme/league.css" id="theme">
+		<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="components/revealjs/lib/css/zenburn.css">
+	<link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
 		<!-- Printing and PDF exports -->
 	<script>
 		var link = document.createElement( 'link' );
@@ -29,9 +28,6 @@
 		link.href = window.location.search.match( /print-pdf/gi ) ? 'components/revealjs/css/print/pdf.css' : 'components/revealjs/css/print/paper.css';
 		document.getElementsByTagName( 'head' )[0].appendChild( link );
 	</script>
-	<% if (ENV_DEVELOPMENT) { %>
-    	<script src="http://localhost:35729/livereload.js"></script>
-  	<% } %>
 </head>
 <body>
 	<div class="reveal">

@@ -4,49 +4,8 @@
 
 	<script src="components/revealjs/lib/js/head.min.js"></script>
 	<script src="components/revealjs/js/reveal.js"></script>
-
-	<script>
-
-		// Full list of configuration options available at:
-		// https://github.com/hakimel/reveal.js#configuration
-		Reveal.initialize({
-			controls: true,
-			progress: true,
-			history: true,
-			center: true,
-
-			transition: 'convex', // none/fade/slide/convex/concave/zoom
-
-			// Optional reveal.js plugins
-			dependencies: [
-				{ 
-					src: 'components/revealjs/lib/js/classList.js', 
-					condition: function() { return !document.bodyclassList; } 
-				},
-				{ 
-					src: 'components/revealjs/plugin/markdown/marked.js', 
-					condition: function() { return !!document.querySelector( '[data-markdown]' ); } 
-				},
-				{ 
-					src: 'components/revealjs/plugin/markdown/markdown.js', 
-					condition: function() { return !!document.querySelector( '[data-markdown]' ); } 
-				},
-				{ 
-					src: 'components/revealjs/plugin/highlight/highlight.js', 
-					async: true, 
-					condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } 
-				},
-				{ 
-					src: 'components/revealjs/plugin/zoom-js/zoom.js', 
-					async: true 
-				},
-				{ 
-					src: 'components/revealjs/plugin/notes/notes.js', 
-					async: true 
-				}
-			]
-		});
-
-	</script>
+	<script src="components/jquery/dist/jquery.js"></script>
+	<script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="js/cache.js"></script>
 </body>
 </html>
