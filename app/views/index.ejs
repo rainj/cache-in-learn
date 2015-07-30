@@ -1,0 +1,22 @@
+<% include header %>
+	<div class="container main">
+		<div class="container title">
+			<h1>Presentations</h1>
+		</div>
+
+		<div class="container content">
+			<div class="row">
+				<% presentations.forEach(function(presentation){ %>
+					<div class="col-md-4 col-sm-6">
+						<div class="card">
+							<h3><%- presentation.title %></h3>
+							<p><%- presentation.description %></p>
+							<a href='<%- presentation.url %>'>Read more</a>
+						</div>
+					</div>
+				<% }); %>
+			</div>
+		</div>
+	</div>
+
+<% include footer %>

@@ -1,0 +1,39 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+.reveal .slides .triangle {
+  margin: 0 auto !important;
+  padding: 0;
+  width: 600px;
+  height: 600px; }
+  .reveal .slides .triangle .light {
+    border-color: transparent transparent #FFFFFF !important; }
+  .reveal .slides .triangle div {
+    height: 0;
+    border-width: 0 50px 87px !important;
+    border-style: solid !important;
+    padding: 0; }
+  .reveal .slides .triangle .triangle-1st {
+    width: 100px;
+    border-color: transparent transparent #BF360C; }
+  .reveal .slides .triangle .triangle-2nd {
+    width: 200px;
+    border-color: transparent transparent #E64A19; }
+  .reveal .slides .triangle .triangle-3rd {
+    width: 300px;
+    border-color: transparent transparent #FF5722; }
+  .reveal .slides .triangle .triangle-4th {
+    width: 400px;
+    border-color: transparent transparent #FF8A65; }
+  .reveal .slides .triangle .triangle-5th {
+    width: 500px;
+    border-color: transparent transparent #FFCCBC; }
+  .reveal .slides .triangle .triangle-6th {
+    width: 600px;
+    border-color: transparent transparent #FBE9E7; }
+
+/*# sourceMappingURL=presentation-style.css.map */
