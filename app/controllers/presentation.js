@@ -7,9 +7,8 @@ module.exports = function (app) {
 
 router.get('/:name', function (req, res, next) {
 	var folderName = req.params.name;
-	var styles = [ '/components/bootstrap/dist/css/bootstrap.min.css' ];
+	var styles = [];
   	var javacripts = [
-  		'/components/bootstrap/dist/js/bootstrap.min.js',
   		'/js/' + folderName + '/index.js'
   	];
 	var map = {
@@ -17,8 +16,8 @@ router.get('/:name', function (req, res, next) {
 			title: 'Cache in Learn', 
 	  		author: 'Rain Jiang',
 	  		description: 'Usage of cache in Learn System',
-	  		styleFiles: [].concat(styles, '/css/' + folderName + '/presentation-style.css'),
-	  		jsFiles: javacripts
+	  		styleFiles: [].concat(styles, '/css/' + folderName + '/presentation-style.css', '/components/bootstrap/dist/css/bootstrap.min.css'),
+	  		jsFiles: [].concat(javacripts, '/components/bootstrap/dist/js/bootstrap.min.js')
 		},
 		hello: {
 			title: 'Hello', 
@@ -31,7 +30,7 @@ router.get('/:name', function (req, res, next) {
 			title: 'Build Script', 
 	  		author: 'Rain Jiang',
 	  		description: 'Build script in Learn System',
-	  		styleFiles: styles,
+	  		styleFiles: [].concat(styles, '/css/' + folderName + '/presentation-style.css'),
 	  		jsFiles: javacripts
 		}
 	}

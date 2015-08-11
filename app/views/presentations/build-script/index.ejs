@@ -11,22 +11,28 @@
 <section>
 	<section>
 		<h2>Tools</h2>
-		<div>
-			<ul>
-				<li class="fragment">Ant</li>
-				<li class="fragment">Maven</li>
-				<li class="fragment">Gradle</li>
-			</ul>
+		<div class="logo">
+			<img class="fragment" src="/img/build-script/ant.gif" height="100" width="100">
+			<img class="fragment" src="/img/build-script/maven.png" height="100" width="100">
+			<img class="fragment" src="/img/build-script/gradle.png" height="100" width="100">
 		</div>
 	</section>
 	<section>
 		<h2>Ant</h2>
+		<p>LS/mainline/build/developer</p>
+		<p>learn-bootstrap/workspace/build/developer</p>
 	</section>
 	<section>
 		<h2>Maven</h2>
+		<ul>
+			<li>Dependency management</li>
+			<li>Build lifecycle</li>
+			<li>Constraint && Configuration</li>
+		</ul>
 	</section>
 	<section>
 		<h2>Gradle</h2>
+		<p>Gradle is ... </p>
 	</section>
 </section>
 
@@ -39,59 +45,170 @@
 	</section>
 	<section>
 		<h2>Learn in Perforce</h2>
+		<pre class='fragment'>
+			<code>build refresh install</code>
+		</pre>
 		<div class='fragment'>
 			<p>
-				<small>
-					<code>build refresh install</code>
-				</small>
+				<small>build source -> package -> create installer -> execute installer</small> 
 			</p>
 		</div>
-		<div class='fragment'>
-			<p>
-				<small class='fragment'>build source</small> 
-				<small class='fragment'>-></small>
-				<small class='fragment'>create installer</small>
-				<small class='fragment'>-></small>
-				<small class='fragment'>execute installer</small> 
-			</p>
-		</div>
-		<div class='fragment'>
-			<p>
-				<small>
-					<code>build refresh installer</code>
-				</small>
-			</p>
-		</div>
-		<div class='fragment'>
-			<p>
-				<small>
-					<code>build run-installer</code>
-				</small>
-			</p>
-		</div>
+		<pre class='fragment'>
+			<code>build refresh installer</code>
+		</pre>
+		<pre class='fragment'>
+			<code>build run-installer</code>
+		</pre>
+		<small class='fragment'>learn-bootstrap/workspace/build/developer/devbuild.xml</small>
 	</section>
 	<section>
 		<h2>Learn in Git</h2>
-		<div class='fragment'>
-			<p>
-				<small>
-					<code>gdl installLearn</code>
-				</small>
-			</p>
-		</div>
-		<div class='fragment'>
-			<p>
-				<small>
-					<code>build refresh install</code>
-				</small>
-			</p>
-		</div>
+		<pre class='fragment'>
+			<code>gdl installLearn</code>
+		</pre>
+		<pre class='fragment'>
+			<code data-trim>
+task installLearn() {
+  description 'The primary task to deploy the application. The equivalent to build install in the Ant build.'
+  dependsOn ':install:hooks:runPreInstallationHooks',
+            installApplication,
+            ':install:legacy:runLegacyTools',
+            ':install:hooks:runPostInstallationHooks'
+}
+			</code>
+		</pre>
+		<small class='fragment'>learn-bootstrap/distribution/install/install.gradle(line 67)</small>
 	</section>
 </section>
 
 <section>
-	<h2>Learn in Git</h2>
+	<section>
+		<h2>Learn Uninstallation</h2>
+		<p>
+			<small>Uninstall learn in local machine</small>
+		</p>
+	</section>
+	<section>
+		<h2>Learn in Perforce</h2>
+		<pre class='fragment'>
+			<code>build uninstall</code>
+		</pre>
+		<pre class='fragment'>
+			<code><target name="uninstall" depends="dev-init, -installer.lite, -run-uninstaller.lite"/></code>
+		</pre>
+		<small class='fragment'>learn-bootstrap/workspace/build/developer/devbuild.xml(line 44)</small>
+	</section>
+	<section>
+		<h2>Learn in git</h2>
+		<pre class='fragment'>
+			<code data-trim>gdl uninstallLearn</code>
+		</pre>
+		<pre class='fragment'>
+			<code data-trim>
+task uninstallLearn() {
+  description 'Remove an existing Learn deployment.'
+  dependsOn ':install:legacy:dropInstallations',
+            ':install:legacy:dropAdmin',
+            ':install:legacy:removeConfiguration',
+            ':install:legacy:removeSharedContentDir',
+            ':install:legacy:removeInstallDir'
+}
+			</code>
+		</pre>
+		<small class='fragment'>learn-bootstrap/distribution/install/install.gradle(line 75)</small>
+	</section>
+</section>
 
+<section>
+	<section>
+		<h2>Start Learn Service</h2>
+		<p>
+			<small>start learn service</small>
+		</p>
+	</section>
+	<section>
+		<h2>Learn in Perforce</h2>
+		<pre class='fragment'>
+			<code>build services.start</code>
+		</pre>
+		<pre class='fragment'>
+			<code><target name="services.start" depends="dev-init, -services.start"/></code>
+		</pre>
+		<small class='fragment'>learn-bootstrap/workspace/build/developer/devbuild.xml(line 311)</small>
+	</section>
+	<section>
+		<h2>Learn in Git</h2>
+		<pre class='fragment'>
+			<code>gdl startLearn</code>
+		</pre>
+		<pre class='fragment'>
+			<code>
+task startLearn() {
+  dependsOn project.configurations.buildUtils
+  description 'Task supporting control of the Learn services, allowing them to be started.'
+  doLast {
+    serviceController( 'services.start' )
+  }
+}
+			</code>
+		</pre>
+		<small class='fragment'>learn-bootstrap/distribution/install/legacy/developer.gradle(line 41)</small>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h2>Stop Learn Service</h2>
+		<p>
+			<small>stop learn service</small>
+		</p>
+	</section>
+	<section>
+		<h2>Learn in Perforce</h2>
+		<pre class='fragment'>
+			<code>build services.stop</code>
+		</pre>
+		<pre class='fragment'>
+			<code><target name="services.stop" depends="dev-init, -services.stop"/></code>
+		</pre>
+		<small class='fragment'>learn-bootstrap/workspace/build/developer/devbuild.xml(line 305)</small>
+	</section>
+	<section>
+		<h2>Learn in Git</h2>
+		<pre class='fragment'>
+			<code>gdl stopLearn</code>
+		</pre>
+		<pre class='fragment'>
+			<code>
+task stopLearn() {
+  dependsOn project.configurations.buildUtils
+  description 'Task supporting control of the Learn services, allowing them to be stopped.'
+  doLast {
+    serviceController( 'services.stop' )
+  }
+}
+			</code>
+		</pre>
+		<small class='fragment'>learn-bootstrap/distribution/install/legacy/developer.gradle(line 33)</small>
+	</section>
+</section>
+
+<section>
+	<h2>Deploy B2</h2>
+	<pre class='fragment'>
+		<code data-trim>gdl dB2</code>
+	</pre>
+	<pre class='fragment'>
+		<code data-trim>
+project.task( 'deployB2', type: DeployB2Task ) {
+  description 'Builds the war and installs it through a running appserver via a post to the starting-block b2'
+  // Since most developers will only run the 'gdl deployB2' command or 'gdl installB2', make sure they depend on the test target
+  dependsOn project.test
+  returnLatest ALWAYS_RETURN_LATEST
+}
+		</code>
+	</pre>
+	<small class='fragment'>learn-bootstrap/workspace/tools/blackboard-gradle-plugin/src/main/groovy/blackboard/gradle/B2Plugin.groovy(line 210)</small>
 </section>
 
 <section>

@@ -1,0 +1,21 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.reveal {
+    .slides {
+        .logo {
+            img {
+                margin: 30px 30px 30px 30px;
+            }
+        }
+        pre {
+           box-shadow: 0px 0px 0px;
+        }
+    }
+}
