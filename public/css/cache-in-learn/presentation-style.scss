@@ -9,6 +9,11 @@ a {
 
 .reveal {
     .slides {
+        .logo {
+            img {
+                margin: 30px 30px 30px 30px;
+            }
+        }
         .triangle {
             margin:0 auto !important;
             padding: 0;

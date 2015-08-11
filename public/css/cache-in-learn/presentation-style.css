@@ -5,6 +5,8 @@ body {
 a {
   color: #00B7FF; }
 
+.reveal .slides .logo img {
+  margin: 30px 30px 30px 30px; }
 .reveal .slides .triangle {
   margin: 0 auto !important;
   padding: 0;

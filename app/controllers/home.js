@@ -6,16 +6,22 @@ module.exports = function (app) {
 };
 
 router.get('/', function (req, res, next) {
-	var id = 'cache-in-learn';
 	res.render('index', {
 		title: 'Presentations',
 	  	presentations: [
 	  		{
-	  			id:  id,
+	  			id:  'build-script',
+	  			title: 'Build Script',
+	  			author: 'Rain Jiang',
+	  			description: 'Build Script in Learn System',
+	  			url: '/presentation/build-script'
+	  		},
+	  		{
+	  			id:  'cache-in-learn',
 	  			title: 'Cache in Learn',
 	  			author: 'Rain Jiang',
 	  			description: 'Usage of cache in Learn System',
-	  			url: '/presentation/' + id
+	  			url: '/presentation/cache-in-learn'
 	  		},
 	  		{
 	  			id:  'hello',
