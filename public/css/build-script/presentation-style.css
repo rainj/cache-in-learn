@@ -7,7 +7,8 @@ a {
 
 .reveal .slides .logo img {
   margin: 30px 30px 30px 30px; }
-.reveal .slides pre {
-  box-shadow: 0px 0px 0px; }
+.reveal .slides .text-align-left {
+  margin-left: 50px;
+  text-align: left; }
 
 /*# sourceMappingURL=presentation-style.css.map */

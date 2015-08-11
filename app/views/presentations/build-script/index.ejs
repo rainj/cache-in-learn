@@ -45,39 +45,34 @@
 	</section>
 	<section>
 		<h2>Learn in Perforce</h2>
-		<pre class='fragment'>
-			<code>build refresh install</code>
-		</pre>
-		<div class='fragment'>
-			<p>
-				<small>build source -> package -> create installer -> execute installer</small> 
-			</p>
+		<pre class='fragment'><code>build refresh install</code></pre>
+		<div class="fragment text-align-left">
+			<small>build source -> package -> create installer -> execute installer</small>
 		</div>
-		<pre class='fragment'>
-			<code>build refresh installer</code>
-		</pre>
-		<pre class='fragment'>
-			<code>build run-installer</code>
-		</pre>
-		<small class='fragment'>learn-bootstrap/workspace/build/developer/devbuild.xml</small>
+		<pre class='fragment'><code>build refresh installer</code></pre>
+		<pre class='fragment'><code>build run-installer</code></pre>
+		<div class="fragment text-align-left">
+			<small>learn-bootstrap/workspace/build/developer/devbuild.xml</small>
+		</div>
+
+		<pre class='fragment'><code>java -Xmx256m -jar bb-as-linux-pgsql-*.jar -config /home/postgres/bb-installer.properties  -quiet /usr/local/blackboard -text</code></pre>
+		<div class="fragment text-align-left">
+			<small>LS/mainline/deploy/distrib</small>
+		</div>
 	</section>
 	<section>
 		<h2>Learn in Git</h2>
-		<pre class='fragment'>
-			<code>gdl installLearn</code>
-		</pre>
-		<pre class='fragment'>
-			<code data-trim>
-task installLearn() {
+		<pre class='fragment'><code>gdl installLearn</code></pre>
+		<pre class='fragment'><code data-trim>task installLearn() {
   description 'The primary task to deploy the application. The equivalent to build install in the Ant build.'
   dependsOn ':install:hooks:runPreInstallationHooks',
             installApplication,
             ':install:legacy:runLegacyTools',
             ':install:hooks:runPostInstallationHooks'
-}
-			</code>
-		</pre>
-		<small class='fragment'>learn-bootstrap/distribution/install/install.gradle(line 67)</small>
+}</code></pre>
+		<div class="fragment text-align-left">
+			<small>learn-bootstrap/distribution/install/install.gradle(line 67)</small>
+		</div>
 	</section>
 </section>
 
@@ -90,32 +85,30 @@ task installLearn() {
 	</section>
 	<section>
 		<h2>Learn in Perforce</h2>
-		<pre class='fragment'>
-			<code>build uninstall</code>
-		</pre>
-		<pre class='fragment'>
-			<code><target name="uninstall" depends="dev-init, -installer.lite, -run-uninstaller.lite"/></code>
-		</pre>
-		<small class='fragment'>learn-bootstrap/workspace/build/developer/devbuild.xml(line 44)</small>
+		<pre class='fragment'><code>build uninstall</code></pre>
+		<pre class='fragment'><code><target name="uninstall" depends="dev-init, -installer.lite, -run-uninstaller.lite"/></code></pre>
+		<div class="fragment text-align-left">
+			<small class='fragment'>learn-bootstrap/workspace/build/developer/devbuild.xml(line 44)</small>
+		</div>
+		<pre class="fragment"><code>java -Xmx256m -jar bb-as-linux-pgsql-*.jar -config /home/postgres/bb-installer.properties  -quiet -uninstall /usr/local/blackboard -text</code></pre>
+		<div class="fragment text-align-left">
+			<small>LS/mainline/deploy/distrib</small>
+		</div>
 	</section>
 	<section>
 		<h2>Learn in git</h2>
-		<pre class='fragment'>
-			<code data-trim>gdl uninstallLearn</code>
-		</pre>
-		<pre class='fragment'>
-			<code data-trim>
-task uninstallLearn() {
+		<pre class='fragment'><code data-trim>gdl uninstallLearn</code></pre>
+		<pre class='fragment'><code data-trim>task uninstallLearn() {
   description 'Remove an existing Learn deployment.'
   dependsOn ':install:legacy:dropInstallations',
             ':install:legacy:dropAdmin',
             ':install:legacy:removeConfiguration',
             ':install:legacy:removeSharedContentDir',
             ':install:legacy:removeInstallDir'
-}
-			</code>
-		</pre>
-		<small class='fragment'>learn-bootstrap/distribution/install/install.gradle(line 75)</small>
+}</code></pre>
+		<div class="fragment text-align-left">
+			<small>learn-bootstrap/distribution/install/install.gradle(line 75)</small>
+		</div>
 	</section>
 </section>
 
@@ -128,31 +121,25 @@ task uninstallLearn() {
 	</section>
 	<section>
 		<h2>Learn in Perforce</h2>
-		<pre class='fragment'>
-			<code>build services.start</code>
-		</pre>
-		<pre class='fragment'>
-			<code><target name="services.start" depends="dev-init, -services.start"/></code>
-		</pre>
-		<small class='fragment'>learn-bootstrap/workspace/build/developer/devbuild.xml(line 311)</small>
+		<pre class='fragment'><code>build services.start</code></pre>
+		<pre class='fragment'><code><target name="services.start" depends="dev-init, -services.start"/></code></pre>
+		<div class="fragment text-align-left">
+			<small>learn-bootstrap/workspace/build/developer/devbuild.xml(line 311)</small>
+		</div>
 	</section>
 	<section>
 		<h2>Learn in Git</h2>
-		<pre class='fragment'>
-			<code>gdl startLearn</code>
-		</pre>
-		<pre class='fragment'>
-			<code>
-task startLearn() {
+		<pre class='fragment'><code>gdl startLearn</code></pre>
+		<pre class='fragment'><code>task startLearn() {
   dependsOn project.configurations.buildUtils
   description 'Task supporting control of the Learn services, allowing them to be started.'
   doLast {
     serviceController( 'services.start' )
   }
-}
-			</code>
-		</pre>
-		<small class='fragment'>learn-bootstrap/distribution/install/legacy/developer.gradle(line 41)</small>
+}</code></pre>
+		<div class="fragment text-align-left">
+			<small>learn-bootstrap/distribution/install/legacy/developer.gradle(line 41)</small>
+		</div>
 	</section>
 </section>
 
@@ -165,50 +152,40 @@ task startLearn() {
 	</section>
 	<section>
 		<h2>Learn in Perforce</h2>
-		<pre class='fragment'>
-			<code>build services.stop</code>
-		</pre>
-		<pre class='fragment'>
-			<code><target name="services.stop" depends="dev-init, -services.stop"/></code>
-		</pre>
-		<small class='fragment'>learn-bootstrap/workspace/build/developer/devbuild.xml(line 305)</small>
+		<pre class='fragment'><code>build services.stop</code></pre>
+		<pre class='fragment'><code><target name="services.stop" depends="dev-init, -services.stop"/></code></pre>
+		<div class="fragment text-align-left">
+			<small class='fragment'>learn-bootstrap/workspace/build/developer/devbuild.xml(line 305)</small>
+		</div>
 	</section>
 	<section>
 		<h2>Learn in Git</h2>
-		<pre class='fragment'>
-			<code>gdl stopLearn</code>
-		</pre>
-		<pre class='fragment'>
-			<code>
-task stopLearn() {
+		<pre class='fragment'><code>gdl stopLearn</code></pre>
+		<pre class='fragment'><code>task stopLearn() {
   dependsOn project.configurations.buildUtils
   description 'Task supporting control of the Learn services, allowing them to be stopped.'
   doLast {
     serviceController( 'services.stop' )
   }
-}
-			</code>
-		</pre>
-		<small class='fragment'>learn-bootstrap/distribution/install/legacy/developer.gradle(line 33)</small>
+}</code></pre>
+		<div class="fragment text-align-left">
+			<small>learn-bootstrap/distribution/install/legacy/developer.gradle(line 33)</small>
+		</div>
 	</section>
 </section>
 
 <section>
 	<h2>Deploy B2</h2>
-	<pre class='fragment'>
-		<code data-trim>gdl dB2</code>
-	</pre>
-	<pre class='fragment'>
-		<code data-trim>
-project.task( 'deployB2', type: DeployB2Task ) {
+	<pre class='fragment'><code data-trim>gdl dB2</code></pre>
+	<pre class='fragment'><code data-trim>project.task( 'deployB2', type: DeployB2Task ) {
   description 'Builds the war and installs it through a running appserver via a post to the starting-block b2'
   // Since most developers will only run the 'gdl deployB2' command or 'gdl installB2', make sure they depend on the test target
   dependsOn project.test
   returnLatest ALWAYS_RETURN_LATEST
-}
-		</code>
-	</pre>
-	<small class='fragment'>learn-bootstrap/workspace/tools/blackboard-gradle-plugin/src/main/groovy/blackboard/gradle/B2Plugin.groovy(line 210)</small>
+}</code></pre>
+	<div class="fragment text-align-left">
+		<small>learn-bootstrap/workspace/tools/blackboard-gradle-plugin/src/main/groovy/blackboard/gradle/B2Plugin.groovy(line 210)</small>
+	</div>
 </section>
 
 <section>
