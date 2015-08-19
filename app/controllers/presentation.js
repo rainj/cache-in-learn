@@ -32,6 +32,13 @@ router.get('/:name', function (req, res, next) {
 	  		description: 'Build script in Learn System',
 	  		styleFiles: [].concat(styles, '/css/' + folderName + '/presentation-style.css'),
 	  		jsFiles: javacripts
+		},
+		'sprint16-demo': {
+			title: 'Team Kunlun Demo',
+			author: 'Rain Jiang',
+			description: 'Achivement of Sprint 16',
+			styleFiles: styles,
+	  		jsFiles: javacripts
 		}
 	}
 

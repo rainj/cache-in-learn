@@ -29,6 +29,13 @@ router.get('/', function (req, res, next) {
 	  			author: 'Rain Jiang',
 	  			description: 'Just a hello world!',
 	  			url: '/presentation/hello'
+	  		},
+	  		{
+	  			id: 'sprint16-demo',
+	  			title: 'Team Kunlun Demo',
+	  			author: 'Rain Jiang',
+	  			description: 'Achivement of Sprint 15 and Sprint 16',
+	  			url: '/presentation/sprint16-demo'
 	  		}
 	  	]
 	});
