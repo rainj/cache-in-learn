@@ -16,8 +16,8 @@ router.get('/:name', function (req, res, next) {
 			title: 'Cache in Learn', 
 	  		author: 'Rain Jiang',
 	  		description: 'Usage of cache in Learn System',
-	  		styleFiles: [].concat(styles, '/css/' + folderName + '/presentation-style.css', '/components/bootstrap/dist/css/bootstrap.min.css'),
-	  		jsFiles: [].concat(javacripts, '/components/bootstrap/dist/js/bootstrap.min.js')
+	  		styleFiles: [].concat(styles, '/presentations/css/' + folderName + '/presentation-style.css', '/presentations/components/bootstrap/dist/css/bootstrap.min.css'),
+	  		jsFiles: [].concat(javacripts, '/presentations/components/bootstrap/dist/js/bootstrap.min.js')
 		},
 		hello: {
 			title: 'Hello', 
@@ -30,7 +30,7 @@ router.get('/:name', function (req, res, next) {
 			title: 'Build Script', 
 	  		author: 'Rain Jiang',
 	  		description: 'Build script in Learn System',
-	  		styleFiles: [].concat(styles, '/css/' + folderName + '/presentation-style.css'),
+	  		styleFiles: [].concat(styles, '/presentations/css/' + folderName + '/presentation-style.css'),
 	  		jsFiles: javacripts
 		},
 		'sprint16-demo': {
