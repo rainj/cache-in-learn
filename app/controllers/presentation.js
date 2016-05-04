@@ -9,7 +9,7 @@ router.get('/:name', function (req, res, next) {
 	var folderName = req.params.name;
 	var styles = [];
   	var javacripts = [
-  		'/js/' + folderName + '/index.js'
+  		'/presentations/js/' + folderName + '/index.js'
   	];
 	var map = {
 		'cache-in-learn': {
