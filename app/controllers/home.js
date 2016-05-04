@@ -5,7 +5,7 @@ module.exports = function (app) {
 	app.use('/', router);
 };
 
-router.get('/', function (req, res, next) {
+router.get('/presentations', function (req, res, next) {
 	res.render('index', {
 		title: 'Presentations',
 	  	presentations: [
@@ -36,6 +36,20 @@ router.get('/', function (req, res, next) {
 	  			author: 'Rain Jiang',
 	  			description: 'Achivement of Sprint 15 and Sprint 16',
 	  			url: '/presentation/sprint16-demo'
+	  		}, 
+	  		{
+	  			id: 'sprint17-demo',
+	  			title: 'Team Kunlun Demo',
+	  			author: 'Rain Jiang',
+	  			description: 'Achivement of Sprint 18',
+	  			url: '/presentation/sprint18-demo'
+	  		}, 
+	  		{
+	  			id: 'Hackthon',
+	  			title: 'VDE Tool',
+	  			author: 'Rain Jiang',
+	  			description: 'Virtual Development Environment Tool',
+	  			url: '/presentation/hackthon'
 	  		}
 	  	]
 	});

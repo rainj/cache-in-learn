@@ -39,6 +39,20 @@ router.get('/:name', function (req, res, next) {
 			description: 'Achivement of Sprint 16',
 			styleFiles: styles,
 	  		jsFiles: javacripts
+		},
+		'sprint18-demo': {
+			title: 'Team Kunlun Demo',
+			author: 'Rain Jiang',
+			description: 'Achivement of Sprint 18',
+			styleFiles: styles,
+	  		jsFiles: javacripts
+		},
+		'hackthon': {
+			title: 'Virtual Development Environment Tool',
+			author: 'Rain Jiang',
+			description: 'Make the defect port to mutiple branches much more easier',
+			styleFiles: styles,
+	  		jsFiles: javacripts
 		}
 	}
 
